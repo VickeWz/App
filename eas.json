@@ -6,8 +6,9 @@
     "development": {
       "distribution": "internal",
       "developmentClient": true,
+    
       "android": {
-        "gradleCommand": ":app:assembleDebug"
+        "buildType": "apk"
       },
       "ios": {
         "buildConfiguration": "Debug",
@@ -25,6 +26,7 @@
         "resourceClass": "m1-medium"
       }
     }
+    
   },
   "submit": {
     "production": {}

@@ -11,8 +11,7 @@ import { addToDistance, auth, getDistance } from './utils/firebase';
 // Consult "https://github.com/oblador/react-native-progress" for more info on progress bars (line not circle)
 import { signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, updateProfile } from 'firebase/auth';
 import { getUserExtraInfo, addUserExtraInfo } from './utils/firebase';
-
-import allChallenges from './test_challenges.json';
+import allChallenges from '../flutter-iot-projekt-barnspring-main/test_challenges.json';
 // Host challenges on db in future
 
 
