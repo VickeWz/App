@@ -2,7 +2,12 @@
   "folders": [
 	{
 		"path": "."
+	},
+	{
+		"path": "../../Users/Viktor Kilestad/Desktop/Gamerun"
 	}
 ],
-  "settings": {}
+"settings": {
+	"liveServer.settings.multiRootWorkspaceName": "Gamerun"
+}
 }
