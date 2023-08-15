@@ -1,0 +1,10 @@
+{
+  "hostType": "lan",
+  "lanType": "ip",
+  "dev": true,
+  "minify": false,
+  "urlRandomness": "bG_fESU",
+  "https": false,
+  "scheme": "com.anonymous.iotmobileapp",
+  "devClient": false
+}
