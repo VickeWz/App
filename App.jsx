@@ -11,9 +11,10 @@ import { addToDistance, auth, getDistance } from './utils/firebase';
 // Consult "https://github.com/oblador/react-native-progress" for more info on progress bars (line not circle)
 import { signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, updateProfile } from 'firebase/auth';
 import { getUserExtraInfo, addUserExtraInfo } from './utils/firebase';
-import allChallenges from '../flutter-iot-projekt-barnspring-main/test_challenges.json';
+
+import allChallenges from './test_challenges.json';
 // Host challenges on db in future
-import { useNavigation } from '@react-navigation/native';
+
 
 // SVG imports
 import DashboardSvg from './assets/svg/Dashboard.svg';
@@ -44,6 +45,7 @@ function epochToDate(epoch) {
   const year = date.getFullYear();
   return `${year}-${month}-${day}`;
 }
+
 const App = () => {
 
   const { width } = Dimensions.get('window');
@@ -54,7 +56,7 @@ const App = () => {
   const [currentDistance, setCurrentDistance] = useState();
   const [distanceDiff, setDistanceDiff] = useState();
   const [prevCoords, setPrevCoords] = useState();
-  
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -220,7 +222,6 @@ const App = () => {
       });
     }, [])
       return(
-        
           <View className="h-full w-full flex px-4 justify-center items-center bg-[#0A0A1C]">
             <View className="flex flex-col gap-3 w-full focus:bottom-[132px] transition-all">
             <Text className="text-rose-600">{errorMsg}</Text>
@@ -394,9 +395,9 @@ const App = () => {
                   </Text>
                 </View>
               </View>
-                          </View>
+            </View>
             <Text className="text-white text-2xl mt-6 mb-2 font-[PM] font-semibold">
-              Daily Challenges
+              Challenges
             </Text>
             {topChallenges.map((challenge) => (
               <View key={challenge.title} className="flex justify-center h-14">
@@ -409,13 +410,6 @@ const App = () => {
               </View>
             ))}
           </View>
-          <View className="w-full flex items-center">
-  <TouchableOpacity onPress={() => navigation.navigate( {/* Start of Challenges */})}>
-    <Text className="text-white text-xl font-[PM] font-semibold underline mt-5">
-      See All Challenges
-    </Text>
-  </TouchableOpacity>
-</View>
           {/* Start of Challenges */}
           </View>
           <View className="w-full mt-20 flex items-center">
@@ -509,7 +503,7 @@ const App = () => {
                 </View>
                 <View className="flex items-center">
                   <Text className="text-white text-lg font-[PM]">
-                    {Math.round(currentDistance/2000)}h {Math.round(((currentDistance/1000)%1)*10)/10*60}min
+                    {Math.round(currentDistance/1000)}h {Math.round(((currentDistance/1000)%1)*10)/10*60}min
                   </Text>
                   <Text className="text-white opacity-50 text-xs font-[PM]">
                     Screentime
